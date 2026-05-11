@@ -19,7 +19,7 @@ public class ProductController {
     private ProductRepository productRepository;
 
     // هذا هو الجزء الذي ينقصك لفتح الصفحة
-    @GetMapping("/index")
+    @GetMapping({"/", "/index"})
     public String index(org.springframework.ui.Model model) {
         model.addAttribute("products", productRepository.findAll());
         return "products";
